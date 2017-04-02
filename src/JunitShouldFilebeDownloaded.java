@@ -9,31 +9,21 @@ import org.junit.Test;
 
 public class JunitShouldFilebeDownloaded {
 	private Map<String, String> loginCookiestemp = new HashMap<String, String>();
-    Boolean result = false;
-    
+	Boolean result = false;
 
-    
-    CrawlerCarelink cc = new CrawlerCarelink();
-    
-
-    
-   
 	@Test
 	public void test() throws IOException, ParseException {
-		 LoginDetails LoginUnit = new LoginDetails();
-         if(LoginUnit.CheckConnection(cc.Username,cc.Password)){                
-         Dates DateUnit = new Dates();      
-           
-            if(DateUnit.GetStratDate(cc.StartDate) && DateUnit.GetEndDate(cc.EndDate) )
-            {
-                loginCookiestemp =  LoginUnit.getcookies();
-      CSVData csvtest = new CSVData();
-       result = csvtest.GenerateDocument(loginCookiestemp, cc.StartDate, cc.EndDate);
-            }
-            }
-         System.out.print("Test case Result is :" + " ");
-     assertEquals(cc.TrueorFalse, result);
-     }
+		LoginDetails LoginUnit = new LoginDetails();
+		if (LoginUnit.CheckConnection(CrawlerCarelink.Username, CrawlerCarelink.Password)) {
+			Dates DateUnit = new Dates();
+
+			if (DateUnit.GetStratDate(CrawlerCarelink.StartDate) && DateUnit.GetEndDate(CrawlerCarelink.EndDate)) {
+				loginCookiestemp = LoginUnit.getcookies();
+				CSVData csvtest = new CSVData();
+				result = csvtest.GenerateDocument(loginCookiestemp, CrawlerCarelink.StartDate, CrawlerCarelink.EndDate);
+			}
+		}
+
+		assertEquals(CrawlerCarelink.TrueorFalse, result);
 	}
-
-
+}

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EnterBooleanValue {
+public class EnterBooleanValueForTestResults {
 	private static Scanner keyboard;
 	
 	public Boolean WhatShouldBeTheOutputs() {
