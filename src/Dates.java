@@ -55,7 +55,7 @@ public class Dates {
         try {
             FormatedEndDate = new SimpleDateFormat(dateFormat).parse(EndDate);
         } catch (Exception e) {
-            System.out.println("Start Date is not in correct format \n Date should be in Format of DD/MM/YYYY  Example: 13/03/2017");
+            System.out.println("End Date is not in correct format \n Date should be in Format of DD/MM/YYYY  Example: 13/03/2017");
             return false;
         }
         try {
